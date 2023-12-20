@@ -3,20 +3,20 @@ public class TicTacToe {
     public static final String[][] BOXS = new String[3][3];
 
     public static void main(String[] args){
-        //call a method to print out Info for the game.
-        //call a method to print out 3x3 box.
-        //call a method for a player turn , add the score
-        //call a method for a player 2 turn, add the score
-        //call a method to print out the endGame(Who won);
-        //System.out.println(Arrays.toString(names));
         Scanner console = new Scanner(System.in);
-        String[] playerNames = Intro(console);
-        String winner = eachTurn(console, playerNames);
-        if (winner.equals("tie")){
-            endGame(playerNames);
-        }
-        else {
-            System.out.println(winner + " win!!!");
+        String play = "yes";
+        while (play.equals("yes")){
+            String[] playerNames = Intro(console);
+            String winner = eachTurn(console, playerNames);
+            if (winner.equals("tie")){
+                endGame(playerNames);
+            }
+            else {
+                System.out.println(winner + " win!!!");
+            }
+            System.out.println();
+            System.out.print("Do you want to play again? ");
+            play = console.next();
         }
     }
 
